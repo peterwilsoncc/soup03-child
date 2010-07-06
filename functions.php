@@ -22,9 +22,6 @@ function soup_setupChildThemeClass() {
 			* registerMenus
 		*/
 	
-		function bodyClass($print=true) {
-			echo 'no class here mr wilson';
-		}
 	
 	}
 
