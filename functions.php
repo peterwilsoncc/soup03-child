@@ -11,6 +11,10 @@ function soup_setupChildThemeClass() {
 
 	Class SoupTheme Extends SoupThemeParent {
 
+		function initChildTheme(){
+			//placeholder function for additional initing by the child theme
+		}
+
 		function defineMinimisedCode() {
 			$this->parent['mincss'] = false;
 			$this->parent['minjs'] = false;
