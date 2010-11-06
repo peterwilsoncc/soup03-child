@@ -63,13 +63,14 @@ textarea,
 blockquote,
 th,
 td,
-section, 
-article, 
-header, 
-footer,
-nav,
-aside,
-hgroup {
+
+
+article, aside, figure, footer, header, 
+hgroup, menu, nav, section, menu,
+time, mark, audio, video
+
+
+ {
 	margin:0;
 	padding:0;
 }

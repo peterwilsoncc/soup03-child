@@ -207,7 +207,10 @@ dl.gallery-item {
 /* *****************
 HTML5 Element styles - added by Soupgiant 
 ****************** */
-section, article, header, footer,nav,aside,hgroup {
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section
+/* and various things to display as blocks */
+,#siteDetails {
 	display: block;
 }
 
