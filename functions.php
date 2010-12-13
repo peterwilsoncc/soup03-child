@@ -30,7 +30,19 @@ function soup_setupChildThemeClass() {
 			$this->options['footerWidgets'] = true;
 			$this->options['contentBWidgets'] = true;
 			$this->options['contentCWidgets'] = true;
-			$this->options['handheldCssMedia'] = ''; //use to customise
+			$this->options['handheldCssMedia'] = ''; //use to customise @media query
+			
+			
+			$this->options['editorCSS'] = false; // if true, url is $this->child['css'] . '/all/editor-styles.css'
+			$this->options['editorStyleDropdown'] = false; //show style dropdown - will need to set up class dropdown
+			$this->options['editorEnglishClasses'] = false; //use english for style dropdown class names
+
+			/* ********************
+			 forge the header levels in the editor to keep inline with document layout
+			On pages, Header 1 is a h2 and so on
+			On pasts, Header 1 is a h4 and so on
+			********************* */
+			$this->options['editorFakeHeaderLevels'] = false; 
 		}
 
 		function defineChildVersions() {
@@ -89,6 +101,33 @@ function soup_setupChildThemeClass() {
 			wp_enqueue_script('custom');
 		}
 
+		function editorEnglishClasses($settings) {
+			//Use english names for editor classes
+			// this should be overridden in the child theme
+			
+			$classes = array(
+				'English Name' => 'classname'
+			);
+			
+			
+			
+			
+			if ( !empty($settings['theme_advanced_styles']) ) {
+				$settings['theme_advanced_styles'] .= ';';
+			}
+			else {
+				$settings['theme_advanced_styles'] = '';
+			}
+				
+			$class_settings = '';
+			foreach ( $classes as $name => $value ) {
+				$class_settings .= "{$name}={$value};";
+			}
+
+			$settings['theme_advanced_styles'] .= trim($class_settings, '; ');
+			
+			return $settings;
+		}
 
 	
 	}
