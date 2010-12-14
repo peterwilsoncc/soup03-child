@@ -64,10 +64,11 @@ blockquote,
 th,
 td,
 
+/* html5 elements - from html5reset.org */
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video 
 
-article, aside, figure, footer, header, 
-hgroup, menu, nav, section, menu,
-time, mark, audio, video
 
 
  {

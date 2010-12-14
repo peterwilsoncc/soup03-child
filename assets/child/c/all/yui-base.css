@@ -207,10 +207,16 @@ dl.gallery-item, dd.gallery-caption {
 /* *****************
 HTML5 Element styles - added by Soupgiant 
 ****************** */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section
+
+/* html5 block elements - from html5reset.org */
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section
 /* and various things to display as blocks */
 ,#siteDetails {
 	display: block;
 }
 
+/* html5 inline elements - from html5reset.org */
+details, summary, time, mark, audio, video {
+	display: inline;
+}
