@@ -34,13 +34,23 @@ function soup_setupChildThemeClass() {
 			
 			
 			$this->options['editorCSS'] = false; // if true, url is $this->child['css'] . '/all/editor-styles.css'
-			$this->options['editorStyleDropdown'] = false; //show style dropdown - will need to set up class dropdown
-			$this->options['editorEnglishClasses'] = false; //use english for style dropdown class names
+			
+			/* ********************************
+			If classes are to be added to the editor, add them to editorEnglishClasses as an array
+			otherwise leave the setting as false
+			EG:
+			$this->options['editorEnglishClasses'] = array(
+				'Leader Text' => 'leadertext',
+				'Highlighted' => 'hilight'
+			);
+			********************************* */
+			$this->options['editorEnglishClasses'] = false;
 
 			/* ********************
 			 forge the header levels in the editor to keep inline with document layout
 			On pages, Header 1 is a h2 and so on
 			On pasts, Header 1 is a h4 and so on
+			also adds the class bxPage or bxPost as appropriate
 			********************* */
 			$this->options['editorFakeHeaderLevels'] = false; 
 		}
@@ -99,34 +109,6 @@ function soup_setupChildThemeClass() {
 		function enqueueChildJs(){
 			//this function is usually overwitten in child
 			wp_enqueue_script('custom');
-		}
-
-		function editorEnglishClasses($settings) {
-			//Use english names for editor classes
-			// this should be overridden in the child theme
-			
-			$classes = array(
-				'English Name' => 'classname'
-			);
-			
-			
-			
-			
-			if ( !empty($settings['theme_advanced_styles']) ) {
-				$settings['theme_advanced_styles'] .= ';';
-			}
-			else {
-				$settings['theme_advanced_styles'] = '';
-			}
-				
-			$class_settings = '';
-			foreach ( $classes as $name => $value ) {
-				$class_settings .= "{$name}={$value};";
-			}
-
-			$settings['theme_advanced_styles'] .= trim($class_settings, '; ');
-			
-			return $settings;
 		}
 
 	
