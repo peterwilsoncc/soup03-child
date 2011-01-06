@@ -30,6 +30,7 @@ function soup_setupChildThemeClass() {
 			$this->options['footerWidgets'] = true;
 			$this->options['contentBWidgets'] = true;
 			$this->options['contentCWidgets'] = true;
+			$this->options['showWPAdminBar'] = false;
 			$this->options['handheldCssMedia'] = ''; //use to customise @media query
 			
 			
